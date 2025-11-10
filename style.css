@@ -944,6 +944,7 @@ svg:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .spell-class-container {
@@ -1216,6 +1217,7 @@ svg:hover {
 
     .char-info-grid {
         grid-template-columns: repeat(3, 140px);
+        gap: 10px;
 
         overflow: hidden;
         white-space: nowrap;
