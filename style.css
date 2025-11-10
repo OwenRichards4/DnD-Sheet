@@ -645,9 +645,9 @@ header input {
     display: flex;
     flex-direction: column;
 
-    width: 15%;
+    width: 20%;
 
-    gap: 10px;
+    gap: 5px;
 }
 
 .funds-flex {
@@ -656,7 +656,7 @@ header input {
 }
 
 .funds-flex input {
-    width: 30px;
+    width: 35px;
 
     border: 2px solid black;
     border-radius: 8px;
