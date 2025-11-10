@@ -38,7 +38,9 @@ input {
     width: 0;
 
     -webkit-appearance : none;
-    border-radius      : 0;
+    border-radius: 0;
+    
+    overflow-x: none;
 }
 
 main {
@@ -117,10 +119,12 @@ header {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 }
 
 header input {
-    width: calc(100% - 10px);
+    width: calc(100% - 5px);
     height: 30px;
 
     font-size: 1.2em;
@@ -131,6 +135,8 @@ header input {
 .left-header {
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     padding: 5px;
 }
@@ -174,6 +180,8 @@ header input {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
     height: 90px;
 
     padding: 5px;
@@ -205,6 +213,8 @@ header input {
 
     background-color: white;
     border: 2px solid black;
+
+    overflow-x: hidden;
     border-radius: 50%;
 
     width: 30px;
@@ -251,6 +261,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 }
 
@@ -293,6 +305,8 @@ header input {
 .prof-bonus input, .inspiration input {
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
     text-align: center;
 
     width: 30px;
@@ -310,6 +324,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 }
 
@@ -319,6 +335,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     text-align: center;
 }
 
@@ -326,6 +344,8 @@ header input {
 .other-profs-and-lang {
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     padding: 5px;
 
@@ -393,6 +413,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 
     background-color: white;
@@ -416,6 +438,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
     flex: 1;
 
@@ -433,6 +457,8 @@ header input {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     text-align: center;
     flex: 1;
@@ -514,6 +540,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 
     width: calc(100% - 10px);
@@ -541,6 +569,8 @@ header input {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     padding: 5px;
 
@@ -596,6 +626,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 
     width: 100%;
@@ -625,6 +657,8 @@ header input {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     text-align: center;
 }
@@ -681,6 +715,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 
     background-color: white;
@@ -707,6 +743,8 @@ header input {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 }
 
@@ -722,9 +760,11 @@ textarea {
     font-family: inherit;
 
     border: none;
-    
+
     -webkit-appearance : none;
     border-radius      : 0;
+
+    overflow-x: none;
 }
 
 textarea:focus {
@@ -779,6 +819,8 @@ textarea:focus {
 .character-appearance, .character-backstory, .allies-and-organizations, .additional-features-and-traits, .treasure {
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     text-align: center;
 }
@@ -848,6 +890,8 @@ textarea:focus {
     border: 2px solid black;
     border-radius: 8px;
 
+    overflow-x: hidden;
+
     padding: 5px;
 }
 
@@ -902,6 +946,8 @@ svg:hover {
 
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
     padding: 5px;
 }
 
@@ -914,6 +960,8 @@ svg:hover {
 .spell-flex {
     border: 2px solid black;
     border-radius: 8px;
+
+    overflow-x: hidden;
 
     display: flex;
     flex-direction: row;
@@ -987,6 +1035,8 @@ svg:hover {
     cursor: pointer;
     background-color: white;
     border: 2px solid black;
+
+    overflow-x: hidden;
 }
 
 .third-page header input {
