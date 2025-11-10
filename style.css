@@ -21,6 +21,8 @@ body {
     background-position: center center;
     background-size: cover;
     background-attachment: fixed;
+
+    -webkit-text-size-adjust: 100%;
     
     background-color: var(--background-gray);
 }
@@ -34,6 +36,9 @@ input {
     font-family: inherit;
 
     width: 0;
+
+    -webkit-appearance : none;
+    border-radius      : 0;
 }
 
 main {
@@ -717,6 +722,9 @@ textarea {
     font-family: inherit;
 
     border: none;
+    
+    -webkit-appearance : none;
+    border-radius      : 0;
 }
 
 textarea:focus {
