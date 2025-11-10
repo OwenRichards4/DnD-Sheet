@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>My Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://db.onlinewebfonts.com/c/14936bb7a4b6575fd2eee80a3ab52cc2?family=Feather+Bold" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  </head>
+  <body>
+    <div class="actual-header">
+        <h1>D&D Character Sheet</h1>
+        <p class="pop-up-text" id="pop-up-text">Pushed Data to storage!</p>
+        <button onclick="PushData()">Push Changes</button>
+    </div>
+    <main>
+        <div>
+            <header>
+                <div class="left-header">
+                    <input id="char-name-1"><br>
+                    <label for="char-name-1">Character Name</label>
+                </div>
+                <div class="right-header">
+                    <div class="char-info-grid">
+                        <div>
+                            <input id="class-and-level"><br>
+                            <label for="class-and-level">Class & Level</label>
+                        </div>
+                        <div>
+                            <input id="char-background"><br>
+                            <label for="char-background">Background</label>
+                        </div>
+                        <div>
+                            <input id="player-name"><br>
+                            <label for="player-name">Player Name</label>
+                        </div>
+                        <div>
+                            <input id="clar-race"><br>
+                            <label for="clar-race">Race</label>
+                        </div>
+                        <div>
+                            <input id="char-alignment"><br>
+                            <label for="char-alignment">Alignment</label>
+                        </div>
+                        <div>
+                            <input id="xp-points"><br>
+                            <label for="xp-points">Experience Points</label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="first-page" id="first-page">
+                <div class="first-col">
+                    <div class="first-col-row">
+                        <div class="stats-column">
+                            <div class="stat">
+                                <label for="strength-stat">Strength</label>
+                                <input id="strength-stat" class="stat-num">
+                                <input id="strength-mod" class="mod">
+                            </div>
+                            <div class="stat">
+                                <label for="dex-stat">Dexterity</label>
+                                <input id="dex-stat" class="stat-num">
+                                <input id="dex-mod" class="mod">
+                            </div>
+                            <div class="stat">
+                                <label for="constitution-stat">Constitution</label>
+                                <input id="constitution-stat" class="stat-num">
+                                <input id="constitution-mod" class="mod">
+                            </div>
+                            <div class="stat">
+                                <label for="intelligence-stat">Intelligence</label>
+                                <input id="intelligence-stat" class="stat-num">
+                                <input id="intelligence-mod" class="mod">
+                            </div>
+                            <div class="stat">
+                                <label for="wisdom-stat">Wisdom</label>
+                                <input id="wisdom-stat" class="stat-num">
+                                <input id="wisdom-mod" class="mod">
+                            </div>
+                            <div class="stat">
+                                <label for="charisma-stat">Charisma</label>
+                                <input id="charisma-stat" class="stat-num">
+                                <input id="charisma-mod" class="mod">
+                            </div>
+                        </div>
+                        <div class="skills-column">
+                            <div class="inspiration">
+                                <input id="inspiration">
+                                <label for="inspiration">Inspiration</label>
+                            </div>
+                            <div class="prof-bonus">
+                                <input id="proficiency-bonus">
+                                <label for="proficiency-bonus">Proficiency Bonus</label>
+                            </div>
+                            <div class="saving-throw">
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="strength-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="strength-saving-stat">
+                                    <label for="strength-saving-stat">Strength</label>
+                                </div>
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="dex-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="dex-saving-stat">
+                                    <label for="dex-saving-stat">Dexterity</label>
+                                </div>
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="constitution-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="constitution-saving-stat">
+                                    <label for="constitution-saving-stat">Constitution</label>
+                                </div>
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="intelligence-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="intelligence-saving-stat">
+                                    <label for="intelligence-saving-stat">Intelligence</label>
+                                </div>
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="wisdom-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="wisdom-saving-stat">
+                                    <label for="wisdom-saving-stat">Wisdom</label>
+                                </div>
+                                <div class="saving-stat">
+                                    <svg width="20" height="20"><circle id="charisma-saving-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="charisma-saving-stat">
+                                    <label for="charisma-saving-stat">Charisma</label>
+                                </div>
+                                <p>Saving Throws</p>
+                            </div>
+                            <div class="skills">
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="acrobatics-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="acrobatics-skills-stat">
+                                    <label for="acrobatics-skills-stat">Acrobatics</label>
+                                    <p>(Dex)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="animal-handling-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="animal-handling-skills-stat">
+                                    <label for="animal-handling-skills-stat">Animal Handling</label>
+                                    <p>(Wis)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="arcana-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="arcana-skills-stat">
+                                    <label for="arcana-skills-stat">Arcana</label>
+                                    <p>(Int)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="athletics-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="athletics-skills-stat">
+                                    <label for="athletics-skills-stat">Athletics</label>
+                                    <p>(Str)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="deception-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="deception-skills-stat">
+                                    <label for="deception-skills-stat">Deception</label>
+                                    <p>(Cha)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="history-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="history-skills-stat">
+                                    <label for="history-skills-stat">History</label>
+                                    <p>(Int)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="insight-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="insight-skills-stat">
+                                    <label for="insight-skills-stat">Insight</label>
+                                    <p>(Wis)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="intimidation-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="intimidation-skills-stat">
+                                    <label for="intimidation-skills-stat">Intimidation</label>
+                                    <p>(Cha)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="investigation-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="investigation-skills-stat">
+                                    <label for="investigation-skills-stat">Investigation</label>
+                                    <p>(Int)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="medicine-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="medicine-skills-stat">
+                                    <label for="medicine-skills-stat">Medicine</label>
+                                    <p>(Wis)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="nature-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="nature-skills-stat">
+                                    <label for="nature-skills-stat">Nature</label>
+                                    <p>(Int)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="perception-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="perception-skills-stat">
+                                    <label for="perception-skills-stat">Perception</label>
+                                    <p>(Wis)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="performance-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="performance-skills-stat">
+                                    <label for="performance-skills-stat">Performance</label>
+                                    <p>(Cha)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="persuasion-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="persuasion-skills-stat">
+                                    <label for="persuasion-skills-stat">Persuasion</label>
+                                    <p>(Cha)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="religion-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="religion-skills-stat">
+                                    <label for="religion-skills-stat">Religion</label>
+                                    <p>(Int)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="sleight-of-hand-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="sleight-of-hand-skills-stat">
+                                    <label for="sleight-of-hand-skills-stat">Sleight of Hand</label>
+                                    <p>(Dex)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="stealth-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="stealth-skills-stat">
+                                    <label for="stealth-skills-stat">Stealth</label>
+                                    <p>(Dex)</p>
+                                </div>
+                                <div class="skills-stat">
+                                    <svg width="20" height="20"><circle id="survival-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    <input id="survival-skills-stat">
+                                    <label for="survival-skills-stat">Survival</label>
+                                    <p>(Wis)</p>
+                                </div>
+                                <p class="skills-p">Skills</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="passive-wisdom-percept">
+                        <input id="passive-wisdom-percept">
+                        <label for="passive-wisdom-percept">Passive Wisdom (Perception)</label>
+                    </div>
+                    <div class="other-profs-and-lang">
+                        <textarea id="other-profs-and-lang"></textarea><br>
+                        <label for="other-profs-and-lang">Other Proficiencies & Languages</label>
+                    </div>
+                </div>
+                <div class="second-col">
+                    <div class="mid-f">
+                        <div class="mid-f-f-row">
+                            <div class="armor-class">
+                                <input id="armor-class"><br>
+                                <label for="armor-class">Armor<br>Class</label>
+                            </div>
+                            <div class="initiative">
+                                <input id="initiative"><br>
+                                <label for="initiative">Initiative</label>
+                            </div>
+                            <div class="speed">
+                                <input id="speed"><br>
+                                <label for="speed">Speed</label>
+                            </div>
+                        </div>
+                        <div class="curr-hit-points">
+                            <div class="hp-max">
+                                <label for="hp-max">Hit Point Maximum</label>
+                                <input id="hp-max">
+                            </div>
+                            <input id="curr-hit-points" class="full-size-input">
+                            <label for="curr-hit-points">Current Hit Points</label>
+                        </div>
+                        <div class="temp-hit-points">
+                            <input id="temp-hit-points" class="full-size-input"><br>
+                            <label for="temp-hit-points">Temporary Hit Points</label>
+                        </div>
+                        <div class="hit-dice-and-death-saves">
+                            <div class="hit-dice">
+                                <div class="hd-total">
+                                    <label for="total">Total</label>
+                                    <input id="total">
+                                </div>
+                                <input id="hit-dice" class="hit-dice-input">
+                                <label for="hit-dice">Hit Dice</label>
+                            </div>
+                            <div class="death-saves">
+                                <div class="death-saves-flex">
+                                    <div class="ds-success">
+                                        <p>Successess</p>
+                                        <svg width="20" height="20"><circle id="success-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                        <svg width="20" height="20"><circle id="success-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                        <svg width="20" height="20"><circle id="success-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    </div>
+                                    <div class="ds-fails">
+                                        <p>Failures</p>
+                                        <svg width="20" height="20"><circle id="failure-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                        <svg width="20" height="20"><circle id="failure-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                        <svg width="20" height="20"><circle id="failure-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                                    </div>
+                                </div>
+                                <p class="death-saves-p">Death Saves</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="atk-and-spellcasting">
+                        <div class="atk-and-spellcasting-flex">
+                            <div class="atkspell-c1">
+                                <p>Name</p>
+                                <input id="name-1">
+                                <input id="name-2">
+                                <input id="name-3"> 
+                            </div>
+                            <div class="atkspell-c2">
+                                <p>ATK Bonus</p>
+                                <input id="atkB-1">
+                                <input id="atkB-2">
+                                <input id="atkB-3">
+                            </div>
+                            <div class="atkspell-c3">
+                                <p>Damage/Type</p>
+                                <input id="dmgType-1">
+                                <input id="dmgType-2">
+                                <input id="dmgType-3">
+                            </div>
+                        </div>
+                        <textarea class="atkspell-details" id="atkspell-details"></textarea>
+                        <p class="atks-and-spellcasting-p">Attacks & SpellCasting</p>
+                    </div>
+                    <div class="equipment">
+                        <div class="equip-start-flex">
+                            <div class="funds">
+                                <div class="funds-flex">
+                                    <label for="cp">CP</label>
+                                    <input id="cp">
+                                </div>
+                                <div class="funds-flex">
+                                    <label for="sp">SP</label>
+                                    <input id="sp">
+                                </div>
+                                <div class="funds-flex">
+                                    <label for="ep">EP</label>
+                                    <input id="ep">
+                                </div>
+                                <div class="funds-flex">
+                                    <label for="gp">GP</label>
+                                    <input id="gp">
+                                </div>
+                                <div class="funds-flex">
+                                    <label for="pp">PP</label>
+                                    <input id="pp">
+                                </div>
+                            </div>
+                            <textarea class="equipment-details" id="equipment-details"></textarea>
+                        </div>
+                        <p>Equipment</p>
+                    </div>
+                </div>
+                <div class="third-col">
+                    <div class="last-f">
+                        <div class="last-f-inputs">
+                            <textarea id="personality-traits"></textarea>
+                            <label for="personality-traits">Personality Traits</label>
+                        </div>
+                        <div class="last-f-inputs">
+                            <textarea id="ideals"></textarea>
+                            <label for="ideals">Ideals</label>
+                        </div>
+                        <div class="last-f-inputs">
+                            <textarea id="bonds"></textarea>
+                            <label for="bonds">Bonds</label>
+                        </div>
+                        <div class="last-f-inputs">
+                            <textarea id="flaws"></textarea>
+                            <label for="flaws">Flaws</label>
+                        </div>
+                    </div>
+                    <div class="feats-and-traits">
+                        <textarea id="feats-and-traits"></textarea>
+                        <label for="feats-and-traits">Features & Traits</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="second-page" id="second-page">
+            <header>
+                <div class="left-header">
+                    <input id="char-name-2"><br>
+                    <label for="char-name-2">Character Name</label>
+                </div>
+                <div class="right-header">
+                    <div class="char-info-grid">
+                        <div>
+                            <input id="age"><br>
+                            <label for="age">Age</label>
+                        </div>
+                        <div>
+                            <input id="height"><br>
+                            <label for="height">Height</label>
+                        </div>
+                        <div>
+                            <input id="weight"><br>
+                            <label for="weight">Weight</label>
+                        </div>
+                        <div>
+                            <input id="eyes"><br>
+                            <label for="eyes">Eyes</label>
+                        </div>
+                        <div>
+                            <input id="skin"><br>
+                            <label for="skin">Skin</label>
+                        </div>
+                        <div>
+                            <input id="hair"><br>
+                            <label for="hair">Hair</label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="second-page-main">
+                <div class="sp-left-col">
+                    <div class="character-appearance">
+                        <textarea id="character-appearance"></textarea>
+                        <p>Character Appearance</p>
+                    </div>
+                    <div class="character-backstory">
+                        <textarea id="character-backstory"></textarea>
+                        <p>Character Backstory</p>
+                    </div>
+                </div>
+                <div class="sp-right-col">
+                    <div class="allies-and-organizations">
+                        <div class="allies-and-organizations-flex">
+                            <textarea id="allies-and-organizations"></textarea>
+                            <div class="symbol-section">
+                                <div class="symbol-container">
+                                    <div>
+                                        <label for="symbol-name">Name</label>
+                                        <input id="symbol-name">
+                                    </div>
+                                    <p>Symbol</p>
+                                </div>
+                            </div>
+                        </div>
+                        <p>Allies & Organizations</p>
+                    </div>
+                    <div class="additional-features-and-traits">
+                        <textarea id="additional-features-and-traits"></textarea>
+                        <p>Additional Features & Traits</p>
+                    </div>
+                    <div class="treasure">
+                        <textarea id="treasure"></textarea>
+                        <p>Treasure</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="third-page" id="third-page">
+            <header>
+                <div class="left-header">
+                    <input id="class-name"><br>
+                    <label for="class-name">Spellcasting Class</label>
+                </div>
+                <div class="right-header">
+                    <div class="char-info-grid">
+                        <div>
+                            <input id="spellcasting-ability"><br>
+                            <label for="spellcasting-ability">Spellcasting Ability</label>
+                        </div>
+                        <div>
+                            <input id="spell-save-dc"><br>
+                            <label for="spell-save-dc">Spell Save DC</label>
+                        </div>
+                        <div>
+                            <input id="spell-attack-bonus"><br>
+                            <label for="spell-attack-bonus">Spell Attack Bonus</label>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            <div class="third-page-main">
+                <div class="tp-cl">
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level-cantrip">0</p>
+                            <p class="spell-name-cantrip">Cantrips</p>
+                        </div>
+
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <input id="cantrip-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="cantrip-spell-8-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">1</p>
+                            <input id="lvl-1-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-9-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-10-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-10">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-10-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-11-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-11">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-11-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-1-spell-12-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-1-spell-12">
+                            <ion-icon name="chevron-forward-outline" id="lvl-1-spell-12-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">2</p>
+                            <input id="lvl-2-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-9-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-10-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-10">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-10-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-11-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-11">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-11-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-12-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-12">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-12-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-2-spell-13-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-2-spell-13">
+                            <ion-icon name="chevron-forward-outline" id="lvl-2-spell-13-button"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="tp-c2">
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">3</p>
+                            <input id="lvl-3-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-9-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-10-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-10">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-10-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-11-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-11">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-11-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-12-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-12">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-12-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-3-spell-13-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-3-spell-13">
+                            <ion-icon name="chevron-forward-outline" id="lvl-3-spell-13-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">4</p>
+                            <input id="lvl-4-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-9-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-10-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-10">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-10-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-11-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-11">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-11-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-12-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-12">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-12-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-4-spell-13-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-4-spell-13">
+                            <ion-icon name="chevron-forward-outline" id="lvl-4-spell-13-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">5</p>
+                            <input id="lvl-5-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-5-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-5-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-5-spell-8-button"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+                <div class="tp-c3">
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">6</p>
+                            <input id="lvl-6-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-6-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-6-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-6-spell-9-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">7</p>
+                            <input id="lvl-7-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-7-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-8-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-8">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-8-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-7-spell-9-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-7-spell-9">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-9-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">8</p>
+                            <input id="lvl-8-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-8-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-8-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-8-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-7-spell-1-button"></ion-icon>
+                        </div>
+                    </div>
+                    <div class="spell-class-container">
+                        <div class="spell-flex">
+                            <p class="spell-level">9</p>
+                            <input id="lvl-9-spells">
+                            <p class="spell-name"></p>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-1-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-1">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-1-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-2-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-2">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-2-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-3-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-3">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-3-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-4-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-4">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-4-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-5-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-5">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-5-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-6-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-6">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-6-button"></ion-icon>
+                        </div>
+                        <div class="lvled-spells-flex">
+                            <svg width="20" height="20"><circle id="lvl-9-spell-7-circle" cx="10" cy="10" r="6" stroke="black" stroke-width="2" fill="white"/></svg>
+                            <input id="lvl-9-spell-7">
+                            <ion-icon name="chevron-forward-outline" id="lvl-9-spell-7-button"></ion-icon>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script>
+        // PULL DATA
+        document.querySelectorAll('circle').forEach(element => {
+            element.addEventListener('click', () => {
+                if (element.style.fill == "var(--background-gray)") {
+                    element.style.fill = "white";
+                    localStorage.setItem(element.id, false);
+                } else {
+                    element.style.fill = "var(--background-gray)";
+                    localStorage.setItem(element.id, true);
+                }
+            })
+
+            if (localStorage.getItem(element.id) == "true") {
+                (element.style.fill = "var(--background-gray)")
+            }
+        })
+
+        // ION-ICON LINKS
+        document.querySelectorAll('ion-icon').forEach(element => {
+            element.addEventListener('click', () => {
+                let id = element.id.toLowerCase().slice(0, element.id.length - 7);
+                let spell = document.getElementById(id).value.toLowerCase().replaceAll(" ", "-").replaceAll("*", "");
+                let url = "https://dnd5e.wikidot.com/spell:" + spell;
+                if (spell != "") {
+                    window.open(url);
+                }
+            })
+        });
+
+        document.querySelectorAll('input').forEach(element => {
+            element.value = localStorage.getItem(element.id);
+        })
+
+        document.querySelectorAll('textarea').forEach(element => {
+            element.value = localStorage.getItem(element.id);
+        })
+
+
+
+
+
+        function PushData() {
+            document.querySelectorAll('input').forEach(element => {
+                localStorage.setItem(element.id, element.value);
+            })
+
+            document.querySelectorAll('textarea').forEach(element => {
+                localStorage.setItem(element.id, element.value);
+            });
+
+            // POPUP TEXT
+            document.getElementById('pop-up-text').style.display = "block";
+            setTimeout(() => {
+                document.getElementById('pop-up-text').style.display = "none";
+            }, 5000);
+        }
+    </script>
+  </body>
+</html>
