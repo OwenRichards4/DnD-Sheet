@@ -615,6 +615,14 @@ header input {
     gap: 5px;
 }
 
+.atkspell-c2 p {
+    width: 60px;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 .atkspell-details {
     height: 150px;
     width: 100%;
@@ -656,7 +664,7 @@ header input {
 }
 
 .funds-flex input {
-    width: 35px;
+    width: 40px;
 
     border: 2px solid black;
     border-radius: 8px;
@@ -1117,10 +1125,6 @@ svg:hover {
 
     .atkspell-c2 p {
         width: 50px;
-
-        overflow: hidden;
-        white-space: nowrap;
-        text-overflow: ellipsis;
     }
 }
 
@@ -1389,6 +1393,7 @@ svg:hover {
         white-space: nowrap;
         text-overflow: ellipsis;
     }
+    
 
     .ds-success p, .ds-fails p {
         width: 40px;
