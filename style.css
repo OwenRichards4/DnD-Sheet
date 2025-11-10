@@ -201,7 +201,8 @@ header input {
 .stat-num {
     position: relative;
 
-    width: calc(100%);
+    width: 100%;
+    max-width: 89px;
 
     height: 50px;
     top: 5px;
